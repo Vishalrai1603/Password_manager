@@ -1,0 +1,17 @@
+password_manager/
+│
+├── db/                            # Folder for database scripts
+│   └── create_db.sql              # SQL script to create database and tables
+│
+├── src/                           # Folder for the Python source code
+│   ├── __init__.py                # To mark the folder as a Python module
+│   ├── db_connection.py          # Database connection management (MySQL)
+│   ├── encryption.py             # Functions for encryption and decryption
+│   ├── password_manager.py       # Main logic for adding/retrieving passwords
+│   └── cli.py                     # Command-line interface for interacting with the password manager
+│
+├── requirements.txt              # Python dependencies (libraries)
+│
+├── README.md                     # Project overview, instructions, and documentation
+│
+└── main.py                       # Main script to run the application

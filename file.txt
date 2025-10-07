@@ -8,6 +8,8 @@ password_manager/
 │   ├── db_connection.py          # Database connection management (MySQL)
 │   ├── encryption.py             # Functions for encryption and decryption
 │   ├── password_manager.py       # Main logic for adding/retrieving passwords
+    |    user_operations.py            # Signup and Login functions
+
 │   └── cli.py                     # Command-line interface for interacting with the password manager
 │
 ├── requirements.txt              # Python dependencies (libraries)
@@ -15,3 +17,14 @@ password_manager/
 ├── README.md                     # Project overview, instructions, and documentation
 │
 └── main.py                       # Main script to run the application
+
+
+password-manager/
+│
+├── password_manager.py          # Main application file
+├── database.py                   # Database connection and setup
+├── encryption.py                 # Encryption/Decryption functions
+├── user_operations.py            # Signup and Login functions
+├── password_operations.py        # Add, View, Search, Delete passwords
+├── config.py                     # Configuration (encryption key)
+└── README.md                     # Project documentation

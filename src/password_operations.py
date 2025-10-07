@@ -6,19 +6,17 @@ from encryption import encrypt_password, decrypt_password
 
 
 def add_password(user_id, website, username, password):
-    """
-    Adds a new password entry for the user
-    Encrypts the password before storing in database
+    # Adds a new password entry for the user
+    # Encrypts the password before storing in database
 
-    Args:
-        user_id (int): ID of the logged-in user
-        website (str): Website or app name
-        username (str): Username for the website
-        password (str): Password to encrypt and store
+    # Args:
+    #     user_id (int): ID of the logged-in user
+    #     website (str): Website or app name
+    #     username (str): Username for the website
+    #     password (str): Password to encrypt and store
 
-    Returns:
-        bool: True if password added successfully, False otherwise
-    """
+    # Returns:
+    #     bool: True if password added successfully, False otherwise
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()
@@ -45,13 +43,11 @@ def add_password(user_id, website, username, password):
 
 
 def view_passwords(user_id):
-    """
-    Displays all saved passwords for the logged-in user
-    Decrypts passwords before displaying
+    # Displays all saved passwords for the logged-in user
+    # Decrypts passwords before displaying
 
-    Args:
-        user_id (int): ID of the logged-in user
-    """
+    # Args:
+    #     user_id (int): ID of the logged-in user
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()
@@ -84,13 +80,11 @@ def view_passwords(user_id):
 
 
 def search_password(user_id, website):
-    """
-    Searches for passwords by website name
+    # Searches for passwords by website name
 
-    Args:
-        user_id (int): ID of the logged-in user
-        website (str): Website name to search for
-    """
+    # Args:
+    #     user_id (int): ID of the logged-in user
+    #     website (str): Website name to search for
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()
@@ -123,16 +117,15 @@ def search_password(user_id, website):
 
 
 def delete_password(user_id, password_id):
-    """
-    Deletes a password entry by its ID
 
-    Args:
-        user_id (int): ID of the logged-in user
-        password_id (int): ID of the password entry to delete
+    # Deletes a password entry by its ID
 
-    Returns:
-        bool: True if deleted successfully, False otherwise
-    """
+    # Args:
+    #     user_id (int): ID of the logged-in user
+    #     password_id (int): ID of the password entry to delete
+
+    # Returns:
+    #     bool: True if deleted successfully, False otherwise
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()

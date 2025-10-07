@@ -9,28 +9,23 @@ cipher = Fernet(ENCRYPTION_KEY)
 
 
 def encrypt_password(password):
-    """
-    Encrypts a password using Fernet encryption
+    # Encrypts a password using Fernet encryption
+    # Args:
+    #     password (str): Plain text password to encrypt
+    # Returns:
+    #     str: Encrypted password as string
 
-    Args:
-        password (str): Plain text password to encrypt
-
-    Returns:
-        str: Encrypted password as string
-    """
     encrypted = cipher.encrypt(password.encode())
     return encrypted.decode()
 
 
 def decrypt_password(encrypted_password):
-    """
-    Decrypts an encrypted password using Fernet decryption
+    
+    # Decrypts an encrypted password using Fernet decryption
+    # Args:
+    #     encrypted_password (str): Encrypted password string
+    # Returns:
+    #     str: Decrypted plain text password
 
-    Args:
-        encrypted_password (str): Encrypted password string
-
-    Returns:
-        str: Decrypted plain text password
-    """
     decrypted = cipher.decrypt(encrypted_password.encode())
     return decrypted.decode()

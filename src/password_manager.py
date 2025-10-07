@@ -6,10 +6,7 @@ from user_operations import signup, login
 from password_operations import add_password, view_passwords, search_password, delete_password
 
 def main_menu():
-    """
-    Displays the main menu before login
-    Handles Signup, Login, and Exit options
-    """
+    #Displays the main menu before login. Handles Signup, Login, and Exit options
     print("\n" + "="*40)
     print("     PASSWORD MANAGER")
     print("="*40)
@@ -19,10 +16,7 @@ def main_menu():
     print("="*40)
 
 def user_menu():
-    """
-    Displays the menu after user login
-    Handles password management operations
-    """
+    # Displays the menu after user login.Handles password management operations
     print("\n" + "="*40)
     print("     PASSWORD MANAGEMENT")
     print("="*40)
@@ -34,10 +28,8 @@ def user_menu():
     print("="*40)
 
 def main():
-    """
-    Main function that runs the password manager application
-    """
-    # Setup database and tables on startup
+    #Main function that runs the password manager application
+
     setup_database()
     
     current_user_id = None

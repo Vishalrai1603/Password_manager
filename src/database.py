@@ -5,10 +5,8 @@ import mysql.connector
 from config import DB_CONFIG
 
 def get_connection():
-    """
-    Establishes connection to MySQL server (without specifying database)
-    Returns connection object
-    """
+    # Establishes connection to MySQL server (without specifying database)
+    # Returns connection object
     try:
         connection = mysql.connector.connect(
             host=DB_CONFIG['host'],
@@ -21,10 +19,9 @@ def get_connection():
         return None
 
 def get_db_connection():
-    """
-    Establishes connection to the password_manager_db database
-    Returns connection object
-    """
+    # Establishes connection to the password_manager_db database
+    # Returns connection object
+    
     try:
         connection = mysql.connector.connect(
             host=DB_CONFIG['host'],
@@ -38,12 +35,12 @@ def get_db_connection():
         return None
 
 def setup_database():
-    """
-    Creates database and tables if they don't exist
-    - Creates password_manager_db database
-    - Creates users table (id, username, password)
-    - Creates passwords table (id, user_id, website, username, password)
-    """
+
+    # Creates database and tables if they don't exist
+    # - Creates password_manager_db database
+    # - Creates users table (id, username, password)
+    # - Creates passwords table (id, user_id, website, username, password)
+
     connection = get_connection()
     if connection:
         cursor = connection.cursor()

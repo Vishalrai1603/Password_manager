@@ -3,16 +3,15 @@ from database import get_db_connection
 
 
 def signup(username, password):
-    """
-    Creates a new user account
+    # Creates a new user account
 
-    Args:
-        username (str): Username for new account
-        password (str): Password for new account (stored as plain text)
+    # Args:
+    #     username (str): Username for new account
+    #     password (str): Password for new account (stored as plain text)
 
-    Returns:
-        bool: True if signup successful, False otherwise
-    """
+    # Returns:
+    #     bool: True if signup successful, False otherwise
+
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()
@@ -35,16 +34,15 @@ def signup(username, password):
 
 
 def login(username, password):
-    """
-    Authenticates user and logs them in
+    # Authenticates user and logs them in
 
-    Args:
-        username (str): Username to login
-        password (str): Password to verify
+    # Args:
+    #     username (str): Username to login
+    #     password (str): Password to verify
 
-    Returns:
-        int or None: User ID if login successful, None otherwise
-    """
+    # Returns:
+    #     int or None: User ID if login successful, None otherwise
+
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()

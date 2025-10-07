@@ -1,6 +1,9 @@
 import mysql.connector
 from database import get_db_connection
+import hashlib
 
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
 
 def signup(username, password):
     # Creates a new user account
@@ -11,6 +14,7 @@ def signup(username, password):
 
     # Returns:
     #     bool: True if signup successful, False otherwise
+    hashed_pw = hash_password(password)
 
     connection = get_db_connection()
     if connection:
@@ -19,7 +23,7 @@ def signup(username, password):
         try:
             # Insert new user into database
             cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)",
-                           (username, password))
+                           (username, hashed_pw))
             connection.commit()
             print(f"\nSignup successful! Welcome, {username}!")
             cursor.close()
@@ -43,6 +47,8 @@ def login(username, password):
     # Returns:
     #     int or None: User ID if login successful, None otherwise
 
+    hashed_pw = hash_password(password)
+
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()
@@ -55,7 +61,7 @@ def login(username, password):
         cursor.close()
         connection.close()
 
-        if result and result[1] == password:
+        if result and result[1] == hashed_pw:
             print(f"\nLogin successful! Welcome back, {username}!")
             return result[0]  # Return user ID
         else:
